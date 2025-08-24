@@ -5,9 +5,9 @@ export default function App() {
   
   
   const [contacts, setContacts] = useState([
-    { id: "1", name: "Ada Lovelace", phone: "555-0101", email: "ada@example.com", favorite: true },
-    { id: "2", name: "Alan Turing",  phone: "555-0102", email: "alan@example.com", favorite: false },
-    { id: "3", name: "Grace Hopper", phone: "555-0103", email: "grace@example.com", favorite: false },
+    { id: "1", name: "Josh Miller", phone: "555-0101", email: "josh@example.com", favorite: true },
+    { id: "2", name: "Alan Nguynen",  phone: "555-0102", email: "alan@example.com", favorite: false },
+    { id: "3", name: "Grace Watson", phone: "555-0103", email: "grace@example.com", favorite: false },
   ]);
 
   
