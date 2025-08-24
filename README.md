@@ -1,6 +1,6 @@
 Contacts App
 
-A simple, clean React contacts manager with search, add, edit, delete, favorites (⭐), and a sleek dark mode UI.
+A simple, clean React contacts manager with search, add, edit, delete, favorites (⭐).
 
 Live Demo: https://contacts-app-rosy.vercel.app/
 
@@ -15,8 +15,6 @@ Live Demo: https://contacts-app-rosy.vercel.app/
 🗑️ Delete contacts (with confirmation)
 
 ⭐ Toggle favorites
-
-🌓 Always-on dark mode styling
 
 ⚛️ Built with React hooks (useState, useRef)
 
