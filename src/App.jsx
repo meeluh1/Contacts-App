@@ -3,22 +3,22 @@ import React, { useState, useRef } from "react";
 export default function App() {
 
   
-  // --- Data ---
+  
   const [contacts, setContacts] = useState([
-    // { id: "1", name: "Ada Lovelace", phone: "555-0101", email: "ada@example.com", favorite: true },
+    { id: "1", name: "Ada Lovelace", phone: "555-0101", email: "ada@example.com", favorite: true },
     { id: "2", name: "Alan Turing",  phone: "555-0102", email: "alan@example.com", favorite: false },
     { id: "3", name: "Grace Hopper", phone: "555-0103", email: "grace@example.com", favorite: false },
   ]);
 
-  // --- UI state ---
+  
   const [query, setQuery] = useState("");
   const emptyDraft = { id: null, name: "", phone: "", email: "", favorite: false };
   const [draft, setDraft] = useState(emptyDraft);
 
-  // Optional: scroll form into view when editing
+  
   const formRef = useRef(null);
 
-  // --- Derived: filtered list (case-insensitive) ---
+  
   const filtered = contacts.filter((c) =>
     [c.name, c.phone, c.email].some((field) =>
       String(field).toLowerCase().includes(query.toLowerCase())
@@ -26,33 +26,33 @@ export default function App() {
   );
   
 
-  // --- Actions ---
+  
   function handleEdit(contact) {
-    setDraft({ ...contact }); // prefill form
+    setDraft({ ...contact }); 
     queueMicrotask?.(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
   function handleSave() {
-    if (!draft.name.trim()) return; // basic validation
+    if (!draft.name.trim()) return; 
 
     if (draft.id) {
-      // Update existing
+      
       setContacts((cs) => cs.map((c) => (c.id === draft.id ? { ...c, ...draft } : c)));
     } else {
-      // Add new
+      
       setContacts((cs) => [
         ...cs,
         { ...draft, id: crypto.randomUUID(), createdAt: new Date().toISOString() },
       ]);
     }
-    setDraft(emptyDraft); // reset form
+    setDraft(emptyDraft); 
   }
 
   function handleCancel() {
     setDraft(emptyDraft);
   }
 
-  // (Optional) click the star to toggle favorite
+  
   function toggleFavorite(id) {
     setContacts((cs) => cs.map((c) => (c.id === id ? { ...c, favorite: !c.favorite } : c)));
   }
@@ -62,12 +62,12 @@ export default function App() {
     if (draft.id === id) setDraft(emptyDraft);
   }
 
-  // --- Render ---
+  
   return (
     <div style={{ maxWidth: 600, margin: "40px auto", fontFamily: "sans-serif" }}>
       <h1>Contacts</h1>
 
-      {/* Search */}
+      
       <input
         type="text"
         placeholder="Search contacts..."
@@ -76,7 +76,7 @@ export default function App() {
         style={{ padding: 8, width: "100%", marginBottom: 16, borderRadius: 6, border: "1px solid #ccc" }}
       />
 
-      {/* List */}
+      
       {contacts.length === 0 ? (
         <p style={{ color: "#666" }}>No Contacts</p>
       ) : filtered.length === 0 ? (
@@ -119,7 +119,7 @@ export default function App() {
         </ul>
       )}
 
-      {/* Add/Edit Form */}
+      
       <form
         ref={formRef}
         onSubmit={(e) => {
