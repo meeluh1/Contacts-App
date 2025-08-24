@@ -1,4 +1,4 @@
-Contacts App
+# Contacts App
 
 A simple, clean React contacts manager with search, add, edit, delete, favorites (⭐).
 
