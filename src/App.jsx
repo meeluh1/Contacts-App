@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 
 export default function App() {
+
+  
   // --- Data ---
   const [contacts, setContacts] = useState([
-    { id: "1", name: "Ada Lovelace", phone: "555-0101", email: "ada@example.com", favorite: true },
+    // { id: "1", name: "Ada Lovelace", phone: "555-0101", email: "ada@example.com", favorite: true },
     { id: "2", name: "Alan Turing",  phone: "555-0102", email: "alan@example.com", favorite: false },
     { id: "3", name: "Grace Hopper", phone: "555-0103", email: "grace@example.com", favorite: false },
   ]);
@@ -22,6 +24,7 @@ export default function App() {
       String(field).toLowerCase().includes(query.toLowerCase())
     )
   );
+  
 
   // --- Actions ---
   function handleEdit(contact) {
